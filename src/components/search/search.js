@@ -1,9 +1,8 @@
 import React, { useState } from "react"
 import { AsyncPaginate } from "react-select-async-paginate"
-import { GEO_API_URL, geoApiOptions } from "../../api"
+import { geoApiOptions, GEO_API_URL } from "../../api"
 
-function search({ onSearchChange }) {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
+const Search = ({ onSearchChange }) => {
   const [search, setSearch] = useState(null)
 
   const loadOptions = inputValue => {
@@ -13,14 +12,15 @@ function search({ onSearchChange }) {
     )
       .then(response => response.json())
       .then(response => {
-        options: response.data.map(city => {
-          return {
-            value: `${city.latitude} ${city.longitude}`,
-            label: `${city.name}, ${city.countryCode}`,
-          }
-        })
+        return {
+          options: response.data.map(city => {
+            return {
+              value: `${city.latitude} ${city.longitude}`,
+              label: `${city.name}, ${city.countryCode}`,
+            }
+          }),
+        }
       })
-      .catch(err => console.error(err))
   }
 
   const handleOnChange = searchData => {
@@ -39,4 +39,4 @@ function search({ onSearchChange }) {
   )
 }
 
-export default search
+export default Search
