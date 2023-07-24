@@ -13,7 +13,7 @@ function search({ onSearchChange }) {
     )
       .then(response => response.json())
       .then(response => {
-        response.data.map(city => {
+        options: response.data.map(city => {
           return {
             value: `${city.latitude} ${city.longitude}`,
             label: `${city.name}, ${city.countryCode}`,
