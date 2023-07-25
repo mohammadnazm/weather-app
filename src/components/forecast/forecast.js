@@ -1,17 +1,17 @@
+import React from "react"
 import {
   Accordion,
-  AccordionItemPanel,
+  AccordionItem,
   AccordionItemHeading,
   AccordionItemButton,
-  AccordionItem,
+  AccordionItemPanel,
 } from "react-accessible-accordion"
-
 import "./forecast.css"
 
 const WEEK_DAYS = [
   "Monday",
   "Tuesday",
-  "wednesday",
+  "Wednesday",
   "Thursday",
   "Friday",
   "Saturday",
@@ -23,8 +23,6 @@ const Forecast = ({ data }) => {
   const forecastDays = WEEK_DAYS.slice(dayInAWeek, WEEK_DAYS.length).concat(
     WEEK_DAYS.slice(0, dayInAWeek)
   )
-
-  console.log(data)
 
   return (
     <>
@@ -53,29 +51,29 @@ const Forecast = ({ data }) => {
             </AccordionItemHeading>
             <AccordionItemPanel>
               <div className="daily-details-grid">
-                <div className="daily-details-item">
-                  <label>Pressure</label>
-                  <label>{item.main.pressure} hPa</label>
+                <div className="daily-details-grid-item">
+                  <label>Pressure:</label>
+                  <label>{item.main.pressure}</label>
                 </div>
-                <div className="daily-details-item">
-                  <label>Humidity</label>
+                <div className="daily-details-grid-item">
+                  <label>Humidity:</label>
                   <label>{item.main.humidity}</label>
                 </div>
-                <div className="daily-details-item">
-                  <label>Clouds</label>
+                <div className="daily-details-grid-item">
+                  <label>Clouds:</label>
                   <label>{item.clouds.all}%</label>
                 </div>
-                <div className="daily-details-item">
+                <div className="daily-details-grid-item">
                   <label>Wind speed:</label>
-                  <label>{item.wind.speed}</label>
+                  <label>{item.wind.speed} m/s</label>
                 </div>
-                <div className="daily-details-item">
-                  <label>Sea Level:</label>
+                <div className="daily-details-grid-item">
+                  <label>Sea level:</label>
                   <label>{item.main.sea_level}m</label>
                 </div>
-                <div className="daily-details-item">
+                <div className="daily-details-grid-item">
                   <label>Feels like:</label>
-                  <label>{Math.round(item.main.feels_like)}m°C</label>
+                  <label>{item.main.feels_like}°C</label>
                 </div>
               </div>
             </AccordionItemPanel>
