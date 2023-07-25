@@ -29,3 +29,11 @@
   line-height: 1;
   margin: 0;
 }
+
+.temperature {
+  font-weight: 600;
+  font-size: 70px;
+  width: auto;
+  letter-spacing: -5px;
+  margin: 10px 0px;
+}
