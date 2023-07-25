@@ -7,13 +7,13 @@ WeatherApp is a user-friendly weather application that provides real-time weathe
 
 ## Features
 
-1. Add, subtract, multiply, divide
-2. Support decimal values
-3. Calculate percentages
-4. Invert the values
-5. Reset functionality
-6. Format larger numbers
-7. Output resize based on length
+1. Real-Time Weather Updates: Get the latest weather data for any location worldwide, keeping you informed about current conditions.
+2. Accurate Weather Data: Reliable weather information sourced from a trusted weather API ensures accuracy in forecasts.
+3. Intuitive Interface: User-friendly design for easy navigation and a seamless experience.
+4. Detailed Weather Information: Access comprehensive data like temperature, humidity, wind speed, and more to plan your day effectively.
+5. Location-Based Forecasting: Get weather forecasts specific to your chosen location, making it convenient for travelers and locals alike.
+
+
 
 ## Installation
 
