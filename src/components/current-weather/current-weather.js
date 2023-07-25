@@ -15,14 +15,16 @@ const CurrentWeather = ({ data }) => {
         />
       </div>
       <div className="bottom">
-        <div className="temperature">{data.main.temp}°C</div>
+        <div className="temperature">{Math.round(data.main.temp)}°C</div>
         <div className="details">
           <div className="parameter-row">
             <span className="parameter-label">Details</span>
           </div>
           <div className="parameter-row">
             <span className="parameter-label">Feels like</span>
-            <span className="parameter-value">22°C</span>
+            <span className="parameter-value">
+              {Math.round(data.main.feels_like)}
+            </span>
           </div>
           <div className="parameter-row">
             <span className="parameter-label">Wind</span>
