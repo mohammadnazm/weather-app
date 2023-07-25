@@ -19,14 +19,19 @@ function App() {
       `${WEATHER_API_KEY}/forecast?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}`
     )
 
-    Promise.all([currentWeatherFetch, forecastFetch]).then(async response => {
-      const weatherResponse = await response[0].json()
-      const forecastResponse = await response[1].json()
+    Promise.all([currentWeatherFetch, forecastFetch])
+      .then(async response => {
+        const weatherResponse = await response[0].json()
+        const forecastResponse = await response[1].json()
 
-      setCurrentWeather({ city: searchData.label, ...weatherResponse })
-      setForecast({ city: searchData.label, ...forecastResponse })
-    })
+        setCurrentWeather({ city: searchData.label, ...weatherResponse })
+        setForecast({ city: searchData.label, ...forecastResponse })
+      })
+      .catch(err => console.log(err))
   }
+
+  console.log(currentWeather)
+  console.log(forecast)
 
   return (
     <div className="container">
